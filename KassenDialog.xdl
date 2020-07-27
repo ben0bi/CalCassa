@@ -7,8 +7,9 @@
   <dlg:style dlg:style-id="2" dlg:border="simple" dlg:font-height="14"/>
  </dlg:styles>
  <dlg:bulletinboard>
-  <dlg:button dlg:id="btn_sell" dlg:tab-index="5" dlg:left="150" dlg:top="110" dlg:width="42" dlg:height="21" dlg:value="$€LL -&gt;"/>
-  <dlg:button dlg:id="CommandButton1" dlg:tab-index="4" dlg:left="105" dlg:top="110" dlg:width="42" dlg:height="21" dlg:value="&lt;- BUY"/>
+  <dlg:button dlg:id="btn_sell" dlg:tab-index="5" dlg:left="150" dlg:top="110" dlg:width="42" dlg:height="21" dlg:value="$€LL -&gt;">
+   <script:event script:event-name="on-mouseup" script:macro-name="vnd.sun.star.script:Standard.Module1.onSellBtnClicked?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
   <dlg:textfield dlg:id="txt_multiplier" dlg:tab-index="1" dlg:left="7" dlg:top="20" dlg:width="31" dlg:height="15" dlg:help-text="Anzahl Items" dlg:value="1">
    <script:event script:event-name="on-textchange" script:macro-name="vnd.sun.star.script:Standard.Module1.onMultiplierTextChange?language=Basic&amp;location=application" script:language="Script"/>
   </dlg:textfield>
@@ -25,5 +26,8 @@
   <dlg:text dlg:style-id="0" dlg:id="lbl_eq" dlg:tab-index="7" dlg:left="82" dlg:top="18" dlg:width="13" dlg:height="13" dlg:value="="/>
   <dlg:text dlg:style-id="1" dlg:id="lbl_chf" dlg:tab-index="8" dlg:left="171" dlg:top="22" dlg:width="21" dlg:height="12" dlg:value="CHF"/>
   <dlg:text dlg:style-id="2" dlg:id="lbl_amount" dlg:tab-index="9" dlg:left="7" dlg:top="35" dlg:width="71" dlg:height="14" dlg:value=" Vorhanden: {}"/>
+  <dlg:button dlg:id="btn_buy" dlg:tab-index="4" dlg:left="105" dlg:top="110" dlg:width="42" dlg:height="21" dlg:value="&lt;- BUY">
+   <script:event script:event-name="on-mouseup" script:macro-name="vnd.sun.star.script:Standard.Module1.onBuyBtnClicked?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
  </dlg:bulletinboard>
 </dlg:window>
