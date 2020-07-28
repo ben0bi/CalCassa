@@ -18,6 +18,7 @@
   </dlg:textfield>
   <dlg:combobox dlg:id="combo_inventorylist" dlg:tab-index="0" dlg:left="7" dlg:top="3" dlg:width="184" dlg:height="15" dlg:spin="true">
    <script:event script:event-name="on-mouseup" script:macro-name="vnd.sun.star.script:Standard.Module1.onListItemClick?language=Basic&amp;location=application" script:language="Script"/>
+   <script:event script:event-name="on-keyup" script:macro-name="vnd.sun.star.script:Standard.Module1.onListItemClick?language=Basic&amp;location=application" script:language="Script"/>
   </dlg:combobox>
   <dlg:text dlg:style-id="0" dlg:id="lbl_multi" dlg:tab-index="6" dlg:left="39" dlg:top="20" dlg:width="9" dlg:height="13" dlg:value="*"/>
   <dlg:textfield dlg:id="txt_total" dlg:tab-index="3" dlg:left="97" dlg:top="20" dlg:width="70" dlg:height="15" dlg:help-text="Gesamtsumme" dlg:value="0">
