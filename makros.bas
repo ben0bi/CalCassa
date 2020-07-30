@@ -21,9 +21,7 @@ Global Const trans_col_amount = 2
 Global Const trans_col_ausgaben = 3
 Global Const trans_col_einnahmen = 4
 Global Const trans_col_sum = 5
-Global Const SumSum = "=SUMME(E2-D2)"
 Global Const trans_col_total = 6
-Global Const TotalSum1 = "=SUMME(F2)"
 Global Const TotalSum2 = "=SUMME(G2+F3)"
 
 Public oBuySellDialog
@@ -180,11 +178,14 @@ Sub onSellBtnClicked
 End Sub
 
 Sub createTransaction(thename as String, amount as Double, ausgaben as Double, einnahmen as Double)
-	Dim oSheet, oCell
+	Dim oSheet, oCell, oCell2
 	oSheet = ThisComponent.Sheets(transaction_sheet)
 	oSheet.Rows.insertByIndex(1,1)
 	
 	' TODO: SET DATE
+	' set name
+	oCell = oSheet.getCellByPosition(trans_col_date,1)
+	oCell.String = date()
 	
 	' set name
 	oCell = oSheet.getCellByPosition(trans_col_name,1)
@@ -200,10 +201,13 @@ Sub createTransaction(thename as String, amount as Double, ausgaben as Double, e
 	oCell.String = einnahmen
 	' set sums
 	oCell = oSheet.getCellByPosition(trans_col_sum,1)
-	oCell.String = SumSum
+	oCell.String = CStr(CDbl(einnahmen)-CDbl(ausgaben))
+
 	oCell = oSheet.getCellByPosition(trans_col_total,1)
-	oCell.String = TotalSum1
-	oCell = oSheet.getCellByPosition(trans_col_total,2)
-	oCell.String = TotalSum2
+	oCell.String = CDbl(einnahmen)-CDbl(ausgaben)
+	
+'	oCell2 = getCellByPosition(trans_col_sum,2)
+'	oCell = oSheet.getCellByPosition(trans_col_total,2)
+'	oCell.setFormula(TotalSum2)	
 End Sub
 
